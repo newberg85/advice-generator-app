@@ -19,7 +19,7 @@ export default function Home() {
 
       const response = await fetch(URL_API);
       const responseData = await response.json();
-      
+
 
       if (!responseData.slip || !responseData.slip.advice) {
         throw new Error("Problema na requisição");
@@ -51,30 +51,30 @@ export default function Home() {
             <p className="text-light-cyan text-xl">Carregando conselho</p>
           }
 
-        {data && (
-        <p className="text-light-cyan text-xl" key={data.id}>
-          &quot;{data.advice}&quot;
-        </p>
-      )}
+          {data && (
+            <p className="text-light-cyan text-xl" key={data.id}>
+              &quot;{data.advice}&quot;
+            </p>
+          )}
         </div>
 
         <div>
-        <Image 
+          <Image
             src={Lined}
             width={300}
             height={50}
             alt="btn icon"
-        />
+          />
         </div>
-        
+
         <div className="flex justify-center">
           <button className="bg-neon-green w-10
           h-10 flex items-center justify-center rounded-3xl p-3 absolute -bottom-4 hover:shadow-neon-green shadow-3xl transition delay-150 duration-300 ease-in-out" onClick={fetchNewAdvice}>
-            <Image 
-            src={Btnicon}
-            width={30}
-            height={30}
-            alt="btn icon"
+            <Image
+              src={Btnicon}
+              width={30}
+              height={30}
+              alt="btn icon"
             />
           </button>
         </div>
